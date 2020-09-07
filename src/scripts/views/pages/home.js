@@ -1,5 +1,4 @@
 import stringSimilarity from 'string-similarity';
-import Data from '../../data/DATA.json';
 import RestaurantAppsSource from '../../data/restaurantapps-source';
 
 const home = {
