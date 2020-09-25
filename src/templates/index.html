@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Explorer Apps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#FA8072" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <a href="#maincontent" class="skip-link">Go To Content</a>
+  <body>
+    <a href="#mainContent" class="skip-link">Go To Content</a>
     <header>
+      <div class="wrapper">
         <h1 tabindex="0">Restaurant Explorer Apps</h1>
-        <a id="hamburger" href="#" aria-label="Button to Open Sidebar">☰</a>
+        <a id="hamburger" href="/" aria-label="Button to Open Sidebar">☰</a>
         <nav id="nav" class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="#">Favorite</a></li>
-                <li class="nav-item"><a href="https://github.com/rabbanee/" target="_blank">About Us</a></li>
-            </ul>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#/favorite">Favorite</a></li>
+            <li class="nav-item">
+              <a href="https://github.com/rabbanee/" target="_blank"
+                >About Us</a
+              >
+            </li>
+          </ul>
         </nav>
+      </div>
     </header>
-    <section class="hero" tabindex="0" aria-label="A Hero/Jumbotron Image">
-        <h2 tabindex="0">Find a Restaurant easier!</h2>
-    </section>
-
-    <main id="mainContent">
-
-    </main>
+    <main id="mainContent"></main>
     <footer>
-        <p tabindex="0" aria-label="copyright &copy; 2020 - Restaurant Finder">copyright &copy; 2020 - Restaurant Finder
-        </p>
+      <p tabindex="0" aria-label="copyright &copy; 2020 - Restaurant Finder">
+        copyright &copy; 2020 - Restaurant Finder
+      </p>
     </footer>
-</body>
-
+    <pre-loader></pre-loader>
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  </body>
 </html>

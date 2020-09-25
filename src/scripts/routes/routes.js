@@ -1,13 +1,11 @@
-import Navigo from 'navigo';
-import home from '../views/pages/home';
+import Home from '../views/pages/home';
+import Detail from '../views/pages/detail';
+import Favorite from '../views/pages/favorite';
 
 const routes = {
-  init(content) {
-    const navigo = new Navigo('http://localhost:8080/', true);
-    navigo.on({
-      '*': home.render(content),
-    });
-  },
+  '/': Home, // default page
+  '/detail/:id': Detail,
+  '/favorite': Favorite,
 };
 
 export default routes;

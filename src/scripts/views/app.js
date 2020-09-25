@@ -1,4 +1,6 @@
+import $ from 'jquery';
 import DrawerInitiator from '../utils/drawer-initiator';
+import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
@@ -19,7 +21,18 @@ class App {
   }
 
   async renderPage() {
-    await routes.init(this._content);
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    if (url !== 'maincontent') {
+      const page = routes[url];
+      $('pre-loader').fadeIn();
+      this._content.innerHTML = await page.render();
+      $('pre-loader').fadeOut();
+      try {
+        await page.afterRender();
+      } catch (error) {
+        this._content.innerHTML = '<no-connection><no-connection/>';
+      }
+    }
   }
 }
 
