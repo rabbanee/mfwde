@@ -14,6 +14,7 @@ import './views/templates/menu-content';
 import './views/templates/restaurant-detail';
 import './views/templates/favorite-button';
 import './views/templates/jumbotron-image';
+import '@fortawesome/fontawesome-free/js/all';
 
 const app = new App({
   button: document.querySelector('#hamburger'),

@@ -52,8 +52,8 @@ header .wrapper h1 {
 header .wrapper #hamburger {
   text-decoration: none;
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   margin: auto;
   justify-content: center;
@@ -294,6 +294,9 @@ main .restaurant-list .restaurant-item h3 a {
   color: black;
   transition: 0.3s opacity;
   text-decoration: none;
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 main .restaurant-list .restaurant-item h3 a:hover {
@@ -302,7 +305,6 @@ main .restaurant-list .restaurant-item h3 a:hover {
 }
 
 main .restaurant-list .restaurant-item .description {
-  margin-top: 12px;
   font-size: 12px;
   line-height: 1.5em;
   overflow: hidden;
@@ -733,7 +735,6 @@ pre-loader {
   main .restaurant-list .restaurant-item .description {
     font-size: 14px;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
