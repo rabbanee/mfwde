@@ -25,8 +25,9 @@ const CacheHelper = {
 
   async _fetchRequest(request) {
     const response = await fetch(request);
-    console.log(request);
-    console.log(response);
+    if (request.destination === 'script' || request.method !== 'GET') {
+      return response;
+    }
 
     if (!response || response.status !== 200) {
       return response;
@@ -37,10 +38,6 @@ const CacheHelper = {
 
   async _addCache(request) {
     const cache = await this._openCache();
-    if (request.method !== 'GET') {
-      return;
-    }
-
     cache.add(request);
   },
 };

@@ -32,13 +32,12 @@ const ConsumerReviewHelper = {
           confirmButtonAriaLabel: 'Ok',
         });
       } else {
-        RestaurantAppsSource.addReviewRestaurant({
+        await RestaurantAppsSource.addReviewRestaurant({
           id: this._restaurant.id,
           name: inputName.value.trim(),
           review: textAreaReview.value.trim(),
         });
         localStorage.setItem('sent', true);
-        // eslint-disable-next-line no-restricted-globals
         location.reload();
       }
     });

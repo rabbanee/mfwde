@@ -1,16 +1,16 @@
 import Swal from 'sweetalert2';
 import UrlParser from '../../routes/url-parser';
 import RestaurantAppsSource from '../../data/restaurantapps-source';
-import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import RestaurantDetailInitiator from '../../utils/restaurant-detail-initiator';
-// eslint-disable-next-line import/no-cycle
 import ConsumerReviewHelper from '../../utils/consumer-review-helper';
+import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
 
 const detail = {
   async render() {
     return `
       <div id="restaurant" class="restaurant"></div>
-      <div id="favoriteButtonContainer"></div>
+      <div id="likeButtonContainer"></div>
     `;
   },
 
@@ -32,9 +32,10 @@ const detail = {
       restaurant,
     });
 
-    FavoriteButtonInitiator.init({
-      favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),
-      restaurant,
+    LikeButtonPresenter.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
+      restaurant: restaurant.restaurant,
     });
 
     ConsumerReviewHelper.init({

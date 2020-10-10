@@ -109,9 +109,14 @@ main {
   position: relative;
   display: flex;
   min-height: 380px;
-  background-image: url('../public/images/heros/hero-image_4.jpg');
+  background-image: url('../public/images/heros/hero-small.jpg');
   background-position: center;
   filter: brightness(80%);
+  background-repeat: no-repeat;
+}
+
+.hero {
+  background-image: url('../public/images/heros/hero-small.webp');
 }
 
 .hero h2 {
@@ -223,20 +228,20 @@ main .restaurant-list .restaurant-item {
   overflow: hidden;
 }
 
-main .restaurant-list .restaurant-item .restaurant-item-content #rating {
+main .restaurant-list .restaurant-item .restaurant-item-content .rating {
   margin-bottom: 10px;
 }
 main
   .restaurant-list
   .restaurant-item
   .restaurant-item-content
-  #rating
+  .rating
   span.text {
   font-size: 14px;
   color: #515454;
 }
 
-main .restaurant-list .restaurant-item .restaurant-item-content #rating .star {
+main .restaurant-list .restaurant-item .restaurant-item-content .rating .star {
   font-size: 16px;
   display: inline-block;
   font-family: Times;
@@ -381,7 +386,7 @@ main favorite-button .favorite {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  background-color: #db0000;
+  background-color: salmon;
   color: white;
   border: 0;
   border-radius: 50%;
@@ -407,16 +412,16 @@ main restaurant-detail .wrapper-content {
   grid-column: 1/4;
 }
 
-main restaurant-detail #rating {
+main restaurant-detail .rating {
   display: flex;
   align-items: center;
 }
-main restaurant-detail #rating span.text {
+main restaurant-detail .rating span.text {
   font-size: 16px;
   color: #515454;
 }
 
-main restaurant-detail #rating .star {
+main restaurant-detail .rating .star {
   font-size: 20px;
   display: inline-block;
   font-family: Times;
@@ -566,7 +571,7 @@ footer {
     .restaurant-list
     .restaurant-item
     .restaurant-item-content
-    #rating
+    .rating
     .star {
     font-size: 18px;
   }
@@ -575,7 +580,7 @@ footer {
     .restaurant-list
     .restaurant-item
     .restaurant-item-content
-    #rating
+    .rating
     span.text {
     font-size: 18px;
     color: #515454;
@@ -629,6 +634,19 @@ pre-loader {
 
   main .restaurant-list .restaurant-item .description {
     font-size: 12px;
+  }
+  .hero {
+    width: 100%;
+    position: relative;
+    display: flex;
+    min-height: 380px;
+    background-position: center;
+    filter: brightness(80%);
+    background-repeat: no-repeat;
+    background-image: url('../public/images/heros/hero-large.jpg');
+  }
+  .hero {
+    background-image: url('../public/images/heros/hero-large.webp');
   }
 }
 

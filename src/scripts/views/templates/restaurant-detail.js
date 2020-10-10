@@ -1,4 +1,5 @@
 const { default: CONFIG } = require('../../globals/config');
+import '@fortawesome/fontawesome-free/js/all';
 
 class RestaurantDetail extends HTMLElement {
   connectedCallback() {
@@ -30,12 +31,13 @@ class RestaurantDetail extends HTMLElement {
       <h2 tabindex="0">${this._restaurant.name}</h2>
       <p class="address" tabindex="0">${this._restaurant.city} • ${this._restaurant.address}</p>
       <div class="wrapper-rating-categories">
-        <div id="rating" aria-label="Rating: ${this._restaurant.rating}" tabindex="0">
+        <div class="rating" aria-label="Rating: ${this._restaurant.rating}" tabindex="0">
           <div class="star" style="--rating: ${this._restaurant.rating};" id="star" data-rating="${this._restaurant.rating}">★★★★★</div>
           <span class="text">${this._restaurant.rating}</span>
         </div>
         <div class="categories">
-          <img src="https://cdn.icon-icons.com/icons2/520/PNG/512/Food-cover_icon-icons.com_52075.png" class="category-icon">
+          <img src="/images/icon-category.png" srcset="./images/icon-category-small.png 480w, ./images/icon-category-large.png 800w"
+           sizes="(max-width: 600px) 480px, 800px" class="category-icon">
           ${this.categories(this._restaurant.categories)}
         </div>
       </div>

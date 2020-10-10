@@ -1,7 +1,7 @@
-import $ from 'jquery';
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
+import FadeHelper from '../utils/fade-helper';
 
 class App {
   constructor({ button, drawer, content }) {
@@ -24,9 +24,16 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     if (url !== 'maincontent') {
       const page = routes[url];
-      $('pre-loader').fadeIn();
+
+      const fadeHelper = new FadeHelper({
+        target: document.querySelector('pre-loader')
+      
+      });
+      
+      fadeHelper.fadeIn();
       this._content.innerHTML = await page.render();
-      $('pre-loader').fadeOut();
+      fadeHelper.fadeOut();
+
       try {
         await page.afterRender();
       } catch (error) {

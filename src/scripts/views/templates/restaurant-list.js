@@ -14,7 +14,7 @@ class RestaurantList extends HTMLElement {
         <div class="wrapper-search">
           <h2 tabindex="0" aria-label="Explore Restaurant">${this._title ? this._title : 'Explore'} Restaurant</h2>
           <div class="wrapper-input">
-            <input type="text" name="search" id="search-input" placeholder="Search Restaurant by Name or City">
+            <input type="text" aria-label="Search" name="search" id="search-input" placeholder="Search Restaurant by Name or City">
             <button type="button" class="search-button">Search</button>
           </div>
         </div>

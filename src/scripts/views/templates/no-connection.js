@@ -25,7 +25,8 @@ class NoConnection extends HTMLElement {
       }
       </style>
       <h2 tabindex="0">No Connection</h2>
-      <img src="/images/no-connection.svg" alt="no connection image" aria-label="No connection's image" tabindex="0">
+      <img src="/images/no-connection.jpg" srcset="./images/no-connection-small.jpg 480w, ./images/no-connection-large.jpg 800w"
+           sizes="(max-width: 600px) 480px, 800px" alt="no connection image" aria-label="No connection's image" tabindex="0">
     `;
   }
 }
