@@ -1,4 +1,3 @@
-import Swal from 'sweetalert2';
 import UrlParser from '../../routes/url-parser';
 import RestaurantAppsSource from '../../data/restaurantapps-source';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
@@ -14,17 +13,23 @@ const detail = {
     `;
   },
 
-  async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantAppsSource.detailRestaurant(url.id);
-    if (localStorage.getItem('sent') === 'true') {
+  showSwal() {
+    return import(/* webpackPrefetch: true */ 'sweetalert2').then(({ default: Swal }) => {
+      localStorage.setItem('sent', false);
       Swal.fire({
         title: 'Success',
         html: '<p aria-label="Your review has been saved">Your review has been saved</p>',
         icon: 'success',
         confirmButtonAriaLabel: 'Ok',
       });
-      localStorage.setItem('sent', false);
+    }).catch(error => 'An error occurred while loading the component');
+  },
+
+  async afterRender() {
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantAppsSource.detailRestaurant(url.id);
+    if (localStorage.getItem('sent') === 'true') {
+      this.showSwal();
     }
 
     RestaurantDetailInitiator.init({

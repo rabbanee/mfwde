@@ -26,10 +26,10 @@ class App {
       const page = routes[url];
 
       const fadeHelper = new FadeHelper({
-        target: document.querySelector('pre-loader')
-      
+        target: document.querySelector('pre-loader'),
+
       });
-      
+
       fadeHelper.fadeIn();
       this._content.innerHTML = await page.render();
       fadeHelper.fadeOut();

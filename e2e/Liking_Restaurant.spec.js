@@ -1,65 +1,69 @@
-// const assert = require('assert');
+const assert = require('assert');
 
-// Feature('Liking Restaurant');
+Feature('Liking Restaurant');
 
-// Before(({ I }) => {
-//   I.amOnPage('/#/favorite');
-// });
+Before(({ I }) => {
+  I.amOnPage('/#/favorite');
+  I.wait(1);
+});
 
-// Scenario('showing empty liked restaurant', ({ I }) => {
-//   I.seeElement('#search-input');
-//   I.see('Data is Not found', '.empty');
-// });
+Scenario('showing empty liked restaurant', ({ I }) => {
+  I.seeElement('#search-input');
+  I.see('Data is Not found', '.empty');
+});
 
-// Scenario('liking one restaurant', async ({ I }) => {
-//   I.see('Data is Not found', '.empty');
+Scenario('liking one restaurant', async ({ I }) => {
+  I.see('Data is Not found', '.empty');
 
-//   I.amOnPage('/');
+  I.amOnPage('/');
 
-//   I.seeElement('.restaurant-item h3 a');
+  I.wait(1);
+  I.seeElement('.restaurant-item h3 a');
 
-//   const firstRestaurant = locate('.restaurant-item h3 a').first();
-//   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
-//   I.click(firstRestaurant);
+  const firstRestaurant = locate('.restaurant-item h3 a').first();
+  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
 
-//   I.wait(1);
-//   I.seeElement('#likeButton');
-//   I.click('#likeButton');
-//   I.wait(1);
-  
-//   I.amOnPage('/#/favorite');
-//   I.wait(1);
-//   I.seeElement('.restaurant-item');
-//   const likedRestaurantTitle = await I.grabTextFrom('.restaurant-item h3 a');
+  I.wait(1);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+  I.wait(1);
 
-//   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
-// });
+  I.amOnPage('/#/favorite');
+  I.wait(1);
+  I.seeElement('.restaurant-item');
+  const likedRestaurantTitle = await I.grabTextFrom('.restaurant-item h3 a');
 
-// Scenario('unliking one restaurant', ({ I }) => {
-//   I.see('Data is Not found', '.empty');
+  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+});
 
-//   I.amOnPage('/');
+Scenario('unliking one restaurant', ({ I }) => {
+  I.see('Data is Not found', '.empty');
 
-//   I.seeElement('.restaurant-item h3 a');
+  I.amOnPage('/');
 
-//   I.click(locate('.restaurant-item h3 a').first());
+  I.wait(1);
+  I.seeElement('.restaurant-item h3 a');
 
-//   I.wait(1);
-//   I.seeElement('#likeButton');
-//   I.click('#likeButton');
-//   I.wait(1);
+  I.click(locate('.restaurant-item h3 a').first());
 
-//   I.amOnPage('/#/favorite');
-//   I.wait(1);
-//   I.seeElement('.restaurant-item');
-  
-//   I.click(locate('.restaurant-item h3 a').first());
+  I.wait(1);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+  I.wait(1);
 
-//   I.wait(1);
-//   I.seeElement('#likeButton');
-//   I.click('#likeButton');
-//   I.wait(1);
+  I.amOnPage('/#/favorite');
+  I.wait(1);
+  I.seeElement('.restaurant-item');
 
-//   I.amOnPage('/#/favorite');
-//   I.see('Data is Not found', '.empty');
-// });
+  I.click(locate('.restaurant-item h3 a').first());
+
+  I.wait(1);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+  I.wait(1);
+
+  I.amOnPage('/#/favorite');
+  I.wait(1);
+  I.see('Data is Not found', '.empty');
+});

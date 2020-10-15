@@ -1,5 +1,4 @@
 const { default: CONFIG } = require('../../globals/config');
-import '@fortawesome/fontawesome-free/js/all';
 
 class RestaurantDetail extends HTMLElement {
   connectedCallback() {

@@ -26,7 +26,7 @@ const LikeButtonPresenter = {
     const likeButtonTemplate = document.createElement('favorite-button');
     likeButtonTemplate.favorite = false;
     this._likeButtonContainer.appendChild(likeButtonTemplate);
-    
+
     const likeButtonElement = document.querySelector('#likeButton');
     likeButtonElement.addEventListener('click', async () => {
       await this._favoriteRestaurants.putRestaurant(this._restaurant);
@@ -38,7 +38,7 @@ const LikeButtonPresenter = {
     const likeButtonTemplate = document.createElement('favorite-button');
     likeButtonTemplate.favorite = true;
     this._likeButtonContainer.appendChild(likeButtonTemplate);
-    
+
     const likeButtonElement = document.querySelector('#likeButton');
     likeButtonElement.addEventListener('click', async () => {
       await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);

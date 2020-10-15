@@ -38,6 +38,7 @@ const ConsumerReviewHelper = {
           review: textAreaReview.value.trim(),
         });
         localStorage.setItem('sent', true);
+        // eslint-disable-next-line no-restricted-globals
         location.reload();
       }
     });

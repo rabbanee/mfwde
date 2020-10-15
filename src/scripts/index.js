@@ -1,9 +1,9 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
+import '../styles/fonts.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import './views/templates/restaurant-item';
-import './views/templates/skeleton-restaurant-item';
 import './views/templates/consumer-review-list';
 import './views/templates/consumer-review-item';
 import './views/templates/pre-loader';
