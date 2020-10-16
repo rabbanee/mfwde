@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -17,7 +18,6 @@ fs.readdirSync(target)
         .slice(0, -1)
         .join('.')}-large.${image.split('.')[1] === 'png' ? 'png' : 'jpg'}`));
 
-        // 480
     sharp(`${target}/${image}`)
       .resize(480)
       .toFile(path.resolve(__dirname, `${destination}/${image.split('.')

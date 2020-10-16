@@ -22,7 +22,7 @@ const detail = {
         icon: 'success',
         confirmButtonAriaLabel: 'Ok',
       });
-    }).catch(error => 'An error occurred while loading the component');
+    }).catch(() => 'An error occurred while loading the component');
   },
 
   async afterRender() {

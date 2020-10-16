@@ -5,7 +5,7 @@ class PreLoader extends HTMLElement {
 
   render() {
     this.innerHTML = `
-     <video autoplay loop muted playsinline>
+    <video autoplay loop muted playsinline>
       <source src="./videos/ripple.webm" type="video/webm">
       <source src="./videos/ripple.mp4" type="video/mp4">
     </video>

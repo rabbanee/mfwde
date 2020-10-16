@@ -5,12 +5,12 @@ class ConsumerReviewList extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div class="review-header">
-        <h3>Consumer Reviews</h3>
-      </div>
-      <div class="wrapper">
-      </div>
-    `;
+    <div class="review-header">
+      <h3>Consumer Reviews</h3>
+    </div>
+    <div class="wrapper">
+    </div>
+  `;
   }
 }
 

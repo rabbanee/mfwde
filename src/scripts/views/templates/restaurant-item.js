@@ -31,8 +31,8 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
       <article class="restaurant-item" id="${this._restaurant.id}">
         <div class="wrapper-img">
-          <img height="40" width="100" data-src="${CONFIG.BASE_URL_IMAGE}small/${this._restaurant.pictureId}" data-srcset="${CONFIG.BASE_URL_IMAGE}small/${this._restaurant.pictureId}" src="./images/placeholder-large.png" srcset="./images/placeholder-small.png 480w, ./images/placeholder-large.png 800w"
-           sizes="(max-width: 600px) 480px, 800px"  class="lazyload" crossorigin='anonymous' alt="${this._restaurant.name || ''}'s image" tabindex="0">
+          <img height="40" width="100" data-original="${CONFIG.BASE_URL_IMAGE}small/${this._restaurant.pictureId}" data-srcset="${CONFIG.BASE_URL_IMAGE}small/${this._restaurant.pictureId}" src="./images/placeholder-large.png" srcset="./images/placeholder-small.png 480w, ./images/placeholder-large.png 800w"
+           sizes="(max-width: 600px) 480px, 800px" class="lazyload" crossorigin='anonymous' alt="${this._restaurant.name || ''}'s image" tabindex="0">
           <p class="city" aria-label="City:  ${this._restaurant.city}" tabindex="0">Kota: ${this._restaurant.city}</p>
         </div>
         <div class="restaurant-item-content">
