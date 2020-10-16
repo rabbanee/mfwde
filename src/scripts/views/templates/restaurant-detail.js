@@ -35,7 +35,7 @@ class RestaurantDetail extends HTMLElement {
           <span class="text">${this._restaurant.rating}</span>
         </div>
         <div class="categories">
-          <img src="/images/icon-category.png" srcset="./images/icon-category-small.png 480w, ./images/icon-category-large.png 800w"
+          <img src="/images/icon-category-large.png" srcset="./images/icon-category-small.png 480w, ./images/icon-category-large.png 800w"
            sizes="(max-width: 600px) 480px, 800px" class="category-icon">
           ${this.categories(this._restaurant.categories)}
         </div>
