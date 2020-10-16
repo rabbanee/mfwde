@@ -27,7 +27,6 @@ class App {
 
       const fadeHelper = new FadeHelper({
         target: document.querySelector('pre-loader'),
-
       });
 
       fadeHelper.fadeIn();

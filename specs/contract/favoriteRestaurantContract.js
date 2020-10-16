@@ -1,4 +1,4 @@
-const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
+const itActsAsFavoriteRestaurantModel = favoriteRestaurant => {
   it('should return the restaurant that has been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
@@ -52,4 +52,5 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
   });
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { itActsAsFavoriteRestaurantModel };

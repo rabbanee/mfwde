@@ -6,7 +6,7 @@ const { default: CacheHelper } = require('./utils/cache-helper');
 const { assets } = global.serviceWorkerOption;
 
 self.addEventListener('install', event => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assets, './', '/images/no-connection-large.jpg']));
+  event.waitUntil(CacheHelper.cachingAppShell([...assets, './', '/images/no-connection-large.jpg', '/images/no-data-large.jpg']));
 });
 
 self.addEventListener('activate', event => {
