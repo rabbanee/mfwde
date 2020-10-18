@@ -25,7 +25,7 @@ const CacheHelper = {
 
   async _fetchRequest(request) {
     const response = await fetch(request);
-    if (request.destination === 'script' || request.method !== 'GET') {
+    if (request.method !== 'GET') {
       return response;
     }
 

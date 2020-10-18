@@ -15,7 +15,7 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
       <style>
       restaurant-item {
-        grid-column: 2 / 3;
+        grid-column: 1 / 4;
       }
       </style>
      <div class="empty">
